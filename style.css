@@ -1,9 +1,10 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: linear-gradient(to bottom right, #1a1a40, #000);
+  background: url('div_photo.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: white;
-  padding: 20px;
+  padding: 40px;
 }
 
 header {
