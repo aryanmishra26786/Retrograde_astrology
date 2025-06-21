@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retrograde Astrology</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<script>
+  document.getElementById('payBtn').onclick = function () {
+    var options = {
+      "key": "YOUR_KEY_ID", // Enter the Key ID generated from Dashboard
+      "amount": 50000, // 500 rupees in paise
+      "currency": "INR",
+      "name": "Retrograde Astrology",
+      "description": "Consultation Booking",
+      "image": "https://yourlogo.png",
+      "handler": function (response) {
+          alert("Payment Successful. Payment ID: " + response.razorpay_payment_id);
+      },
+      "prefill": {
+          "name": "",
+          "email": "",
+          "contact": ""
+      },
+      "theme": {
+          "color": "#7044ff"
+      }
+    };
+    var rzp = new Razorpay(options);
+    rzp.open();
+  };
+</script>
+
+<body>
+  <header>
+    <h1>🔮 Retrograde Astrology</h1>
+    <p>by Divyostav Singh</p>
+  </header>
+
+  <main>
+ 
+    <section class="card contact">
+      <strong>📞 Book a Session</strong>
+      <p>Phone: +91 8810281456</p>
+      <p>Email: ddurgvanshi9@gmail.com</p>
+      <p>🔮 Personalized Astrology Consultation
+
+🔹 Single Life Aspect (Marriage, Career, Children, so on): ₹500
+🔹 Comprehensive Consultation (All 3 Aspects): ₹1,200
+📞 Duration: 30–40 minute phone session with clear insights based on your unique birth chart.
+
+✨ To Book Your Session:
+	1.	Make the payment using the scanner below
+	2.	Share your Date, Time & Place of Birth along with the payment confirmation
+
+📞 You’ll receive a consultation call as per the available slots and your preferred timing.
+
+Looking forward to guiding you with clarity and purpose! </p>
+      <button onclick="document.getElementById('form').scrollIntoView()">Fill Booking Form</button>
+      <button id="payBtn">Pay ₹1,200 for Consultation</button>
+    </section>
+    <section class="payment-section">
+      <h2>💳 Scan to Pay for Consultation</h2>
+      <p>Scan this UPI QR Code to book consulation on single aspect at ₹500</p>
+      <p>Scan this UPI QR Code to book full consulation at ₹1,200</p>
+      <img src="qr_upi.png" alt="UPI QR Code" class="qr-image" />
+      <p><strong>UPI ID:</strong> ddurgvanshi9@okhdfcbank</p>
+    </section>
+  </main>
+
+
+    <section id="form" class="form-section">
+      <h2>📝 Consultation Booking Form</h2>
+      <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Full Name" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="text" placeholder="Date of Birth (DD/MM/YYYY)" required />
+        <input type="text" placeholder="Time of Birth (HH:MM AM/PM)" required />
+        <input type="text" placeholder="Place of Birth" required />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+  
+</footer>
+
+
+  <footer>
+  <a href="https://instagram.com/retrograde_astrology" target="_blank" class="insta-link">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="30" />
+  </a>
+    <p>&copy; 2025 Retrograde Astrology by Divyostav Singh. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
